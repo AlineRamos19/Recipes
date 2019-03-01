@@ -14,7 +14,7 @@
         android:id="@+id/frag_ingredient"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="@dimen/margin_large"
         android:layout_marginTop="?attr/actionBarSize"
         app:layout_constraintBottom_toTopOf="@id/btn_show_steps"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +25,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textSize="@dimen/size_textView"
         android:background="@color/colorPrimary"
         android:drawableEnd="@drawable/ic_next"
         android:drawableRight="@drawable/ic_next"
         android:padding="@dimen/padding_recycler"
         android:text="@string/btn_steps"
+        android:textStyle="bold"
+        android:textColor="@color/colorProgressWhite"
+        android:fontFamily="sans-serif-light"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 

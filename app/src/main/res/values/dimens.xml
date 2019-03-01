@@ -7,4 +7,7 @@
     <dimen name="item_width">200dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="size_textView">16sp</dimen>
+    <dimen name="margin_bottom_min">4dp</dimen>
+    <dimen name="margin_large">58dp</dimen>
 </resources>

@@ -11,13 +11,15 @@
         android:layout_height="wrap_content"
         android:text="@string/label_ingredient"
         android:padding="8dp"
+        android:gravity="center"
+        android:fontFamily="sans-serif-light"
         android:textSize="18sp"
         />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/widget_margin"
         android:background="@color/colorPrimary"/>
 
     <android.support.v7.widget.RecyclerView

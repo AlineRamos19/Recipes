@@ -10,13 +10,15 @@
     android:layout_height="wrap_content">
 
     <TextView
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/size_textView"
         android:id="@+id/short_description_step"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Starting prep"
         android:padding="@dimen/padding_recycler"
         android:background="@drawable/stroke_item_step"
-        android:drawableEnd="@drawable/ic_next"
-        android:drawableRight="@drawable/ic_next" />
+        android:drawableEnd="@drawable/ic_next_steps"
+        android:drawableRight="@drawable/ic_next_steps" />
 
 </LinearLayout>
