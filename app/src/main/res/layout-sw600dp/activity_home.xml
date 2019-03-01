@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    tools:context=".ui.home.HomeActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_home"/>
+
+    <FrameLayout
+        app:layout_constraintTop_toBottomOf="@id/toolbar_home"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/master_list_fragment"
+        android:layout_width="400dp"
+        android:layout_height="match_parent" />
+
+    <View
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_details_recipe_tablet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@layout/fragment_master_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frag_ingredient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="58dp"
+            android:layout_marginTop="@dimen/padding_recycler"
+            app:layout_constraintBottom_toTopOf="@id/btn_show_steps"
+            app:layout_constraintStart_toEndOf="@layout/fragment_master_list"
+           />
+
+        <TextView
+            android:id="@+id/btn_show_steps"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_next"
+            android:drawableRight="@drawable/ic_next"
+            android:gravity="center|start"
+            android:padding="18dp"
+            android:text="@string/btn_steps"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
