@@ -2,6 +2,7 @@ package br.com.android.aline.recipes;
 
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.IdlingResource;
+import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -22,6 +23,8 @@ public class RecipeIdlingResourceTeste {
 
     private IdlingResource mIdlingResource;
 
+
+
     @Before
     public void registerIdlingResource() {
        mIdlingResource = mActivityRule.getActivity().getIdlingResource();
@@ -30,7 +33,9 @@ public class RecipeIdlingResourceTeste {
 
     @Test
     public void idlingResourceTest(){
+        Intents.init();
 
+        Intents.release();
     }
 
     @After
