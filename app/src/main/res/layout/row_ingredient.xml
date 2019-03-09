@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,8 +18,7 @@
         android:text="@string/label_ingredient"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/size_textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
     <TextView
         android:fontFamily="sans-serif-light"
@@ -26,8 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_bottom_min"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_ingredient"
         tools:text="Graham Cracker crumbs" />
 
 
@@ -39,18 +37,13 @@
         android:text="@string/label_quantity"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/size_textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ingredient" />
+        />
 
     <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_quantity"
-        app:layout_constraintTop_toBottomOf="@id/ingredient"
         tools:text="2" />
 
     <TextView
@@ -61,19 +54,14 @@
         android:text="@string/label_measure"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/size_textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_quantity" />
+        />
 
     <TextView
         android:fontFamily="sans-serif-light"
         android:id="@+id/measure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/label_measure"
-        app:layout_constraintTop_toBottomOf="@id/quantity"
         tools:text="CUP" />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -1,10 +1,14 @@
 package br.com.android.aline.recipes.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import br.com.android.aline.recipes.R;
 import br.com.android.aline.recipes.fragments.IngredientFragment;
@@ -19,6 +23,8 @@ public class HomeActivity extends AppCompatActivity implements HomeView, MasterL
     private boolean mTwoPane;
     private Result mResult;
     TextView btnSteps;
+    private SharedPreferences sharedPreferences ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +32,13 @@ public class HomeActivity extends AppCompatActivity implements HomeView, MasterL
         setContentView(R.layout.activity_home);
 
         btnSteps = findViewById(R.id.btn_show_steps);
+        sharedPreferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
 
         if(savedInstanceState == null){
-            if(findViewById(R.id.layout_details_recipe_tablet) != null){
-                mTwoPane = true;
-                initFragment();
-            }else{
-                mTwoPane = false;
-                initFragment();
-            }
+            mTwoPane = findViewById(R.id.layout_details_recipe_tablet) != null;
         }
 
+        initFragment();
         initToolbar();
 
     }
@@ -66,6 +68,18 @@ public class HomeActivity extends AppCompatActivity implements HomeView, MasterL
         }else{
             this.mResult = result;
         }
+
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        if(sharedPreferences.contains("result_prefs")){
+            editor.clear().commit();
+        }
+
+        Gson gson = new Gson();
+        String json = gson.toJson(result);
+        editor.putString("result_prefs", json);
+        editor.commit();
 
         Bundle bundle = new Bundle();
         bundle.putSerializable(RECIPE_KEY, result);

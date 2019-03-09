@@ -34,7 +34,6 @@ public class RecipeWidgetProvider extends AppWidgetProvider {
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
-        super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
     @Override
     public void onDeleted(Context context, int[] appWidgetIds)

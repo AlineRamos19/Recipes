@@ -6,4 +6,5 @@
     <color name="colorBackgroundSplash">#FFB74D</color>
     <color name="colorProgressWhite">#FFFFFF</color>
     <color name="colorWhiteStepsBtn">#ffffff</color>
+    <color name="colorValuesWidget">#000000</color>
 </resources>
