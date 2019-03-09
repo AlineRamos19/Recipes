@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:orientation="horizontal"
+    android:id="@+id/layout_details_recipe_tablet"
     tools:context=".ui.home.HomeActivity">
 
     <include layout="@layout/toolbar"
@@ -25,21 +26,12 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/layout_details_recipe_tablet"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@layout/fragment_master_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
         <FrameLayout
             android:id="@+id/frag_ingredient"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="58dp"
             android:layout_marginTop="@dimen/padding_recycler"
-            app:layout_constraintBottom_toTopOf="@id/btn_show_steps"
+            android:layout_marginBottom="?attr/actionBarSize"
             app:layout_constraintStart_toEndOf="@layout/fragment_master_list"
            />
 
@@ -54,9 +46,9 @@
             android:padding="18dp"
             android:text="@string/btn_steps"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/master_list_fragment"
+          />
 
-    </android.support.constraint.ConstraintLayout>
+
 
 </android.support.constraint.ConstraintLayout>

@@ -34,11 +34,11 @@ public class HomeActivity extends AppCompatActivity implements HomeView, MasterL
         btnSteps = findViewById(R.id.btn_show_steps);
         sharedPreferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
 
-        if(savedInstanceState == null){
-            mTwoPane = findViewById(R.id.layout_details_recipe_tablet) != null;
-        }
 
+        mTwoPane = findViewById(R.id.layout_details_recipe_tablet) != null;
         initFragment();
+
+
         initToolbar();
 
     }
@@ -67,6 +67,12 @@ public class HomeActivity extends AppCompatActivity implements HomeView, MasterL
             getSupportFragmentManager().beginTransaction().replace(R.id.frag_ingredient, ingredientFragment).commit();
         }else{
             this.mResult = result;
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(RECIPE_KEY, result);
+            Intent intent = new Intent(this, MenuRecipeActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
 
 
@@ -81,11 +87,6 @@ public class HomeActivity extends AppCompatActivity implements HomeView, MasterL
         editor.putString("result_prefs", json);
         editor.commit();
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(RECIPE_KEY, result);
-        Intent intent = new Intent(this, MenuRecipeActivity.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
 
 
     }
